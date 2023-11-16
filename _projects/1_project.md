@@ -12,7 +12,7 @@ Mercury is one of the most toxic pollutants in the environment, and wet depositi
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/publication_preview/high-res.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/publication_preview/high-res.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -22,7 +22,7 @@ Mercury is one of the most toxic pollutants in the environment, and wet depositi
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/publication_preview/mercury_paper.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/publication_preview/mercury_paper.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
