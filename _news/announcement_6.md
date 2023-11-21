@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I was awarded Fall 2023 Schlesinger Travel Grant for attending the  International Aerosol Modeling Algorithms conference.
+I received the Fall 2023 Schlesinger Travel Grant to attend the International Aerosol Modeling Algorithms conference at Davis, CA.

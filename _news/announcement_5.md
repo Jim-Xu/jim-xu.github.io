@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I was awarded Spring 2023 Schlesinger Travel Grant for attending American Chemistry Society conference.
+I received the Spring 2023 Schlesinger Travel Grant to attend American Chemistry Society conference at Indianapolis, IN.

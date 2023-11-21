@@ -8,7 +8,7 @@ importance: 2
 related_publications: xu2022Surfactants
 ---
 
-Surfactants play a pivotal role in cloud formation process by changing cloud condensation nuclei activity. Their presence creates a film at the gas-liquid interface, resulting in reduced surface tension and altered water transport dynamics. Traditional approach of &kappa-Köhler theory often overlooked the implications of surfactants, particularly their capacity to decrease surface tension by assuming the surface tension of water, which is vital for realistic aerosol mixtures. This research innovatively combines an effective surface tension model with the particle-resolved aerosol model, PartMC-MOSAIC, allowing for a more sophisticated representation of surface tension variations during water uptake of aerosol particles, bypassing the oversimplifications inherent in conven- tional modal or sectional models.
+Surfactants play a pivotal role in cloud formation process by changing cloud condensation nuclei activity. Their presence creates a film at the gas-liquid interface, resulting in reduced surface tension and altered water transport dynamics. Traditional approach of &kappa;-Köhler theory often overlooked the implications of surfactants, particularly their capacity to decrease surface tension by assuming the surface tension of water, which is vital for realistic aerosol mixtures. This research innovatively combines an effective surface tension model with the particle-resolved aerosol model, PartMC-MOSAIC, allowing for a more sophisticated representation of surface tension variations during water uptake of aerosol particles, bypassing the oversimplifications inherent in conven- tional modal or sectional models.
 
 
 <div class="row">
