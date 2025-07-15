@@ -1,41 +1,42 @@
-FROM ubuntu:latest
-ENV DEBIAN_FRONTEND noninteractive
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
 
-Label MAINTAINER Amir Pourmand
+# 作者信息
+LABEL maintainer="jim.xu"
 
+# 安装系统依赖和 Node.js（ExecJS 用）
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
+    curl gnupg \
     locales \
     imagemagick \
     ruby-full \
     build-essential \
     zlib1g-dev \
     jupyter-nbconvert \
-    inotify-tools procps && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+    inotify-tools \
+    procps \
+    nodejs npm \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# 设置 UTF-8 本地语言支持
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 JEKYLL_ENV=production
 
-RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
-    locale-gen
-
-
-ENV LANG=en_US.UTF-8 \
-    LANGUAGE=en_US:en \
-    LC_ALL=en_US.UTF-8 \
-    JEKYLL_ENV=production
-
-# install jekyll and dependencies
+# 安装 jekyll 和 bundler
 RUN gem install jekyll bundler
 
-RUN mkdir /srv/jekyll
-
-ADD Gemfile /srv/jekyll
-
+# 添加项目代码
 WORKDIR /srv/jekyll
+COPY Gemfile Gemfile.lock ./
 
-RUN bundle install --no-cache
-# && rm -rf /var/lib/gems/3.1.0/cache
+# 安装依赖
+RUN bundle install
+
+# 复制 Jekyll 项目文件（可以换成 ADD）
+COPY . .
+
+# 开放端口
 EXPOSE 8080
 
-COPY bin/entry_point.sh /tmp/entry_point.sh
-
-CMD ["/tmp/entry_point.sh"]
+# 入口脚本（可选）
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--port", "8080", "--livereload"]
